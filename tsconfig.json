@@ -44,7 +44,7 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "tailwind.config.ts"
+    "postcss.config.js"
   ],
   "references": [
     {
