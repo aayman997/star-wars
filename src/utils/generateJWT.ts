@@ -7,9 +7,9 @@ interface TokenPayload {
 }
 
 const dummyUser = {
-	name: "John Doe",
-	image: "https://image.png",
-	email: "john@email.com",
+	name: "Anna Doe",
+	image: "https://fastly.picsum.photos/id/64/4326/2884.jpg?hmac=9_SzX666YRpR_fOyYStXpfSiJ_edO3ghlSRnH2w09Kg",
+	email: "test@email.com",
 };
 
 function randomString(length: number): string {

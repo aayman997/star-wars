@@ -7,6 +7,8 @@ import AuthLayout from "@features/authentication/AuthLayout";
 import Login from "@src/pages/Login";
 import NotFound from "@src/pages/NotFound";
 import { Toaster } from "react-hot-toast";
+import { Suspense } from "react";
+import Spinner from "@components/Spinner";
 
 const queryCLient: QueryClient = new QueryClient({
 	defaultOptions: {
@@ -20,22 +22,29 @@ function App() {
 	return (
 		<QueryClientProvider client={queryCLient}>
 			<ReactQueryDevtools initialIsOpen={false} />
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<ProtectedRoute />}>
-						<Route index element={<Home />} />
-					</Route>
+			<Suspense
+				fallback={
+					<div className="fixed inset-0 flex items-center justify-center bg-brand-900/70">
+						<Spinner />
+					</div>
+				}
+			>
+				<BrowserRouter>
+					<Routes>
+						<Route path="/" element={<ProtectedRoute />}>
+							<Route index element={<Home />} />
+						</Route>
 
-					{/* Unauthorized routes */}
-					<Route element={<AuthLayout />}>
-						<Route path="/login" element={<Login />} />
-					</Route>
+						{/* Unauthorized routes */}
+						<Route element={<AuthLayout />}>
+							<Route path="/login" element={<Login />} />
+						</Route>
 
-					<Route path="not-found" element={<NotFound />} />
-					<Route path="*" element={<Navigate replace to="not-found" />} />
-				</Routes>
-			</BrowserRouter>
-
+						<Route path="*" element={<Navigate replace to="not-found" />} />
+						<Route path="not-found" element={<NotFound />} />
+					</Routes>
+				</BrowserRouter>
+			</Suspense>
 			<Toaster
 				position="top-center"
 				gutter={12}

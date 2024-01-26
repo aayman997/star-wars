@@ -2,6 +2,7 @@ import { useNavigate, Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import Spinner from "@components/Spinner";
 import { useUser } from "@features/authentication/useUser";
+import Layout from "@components/layout/Layout";
 
 function ProtectedRoute() {
 	const navigate = useNavigate();
@@ -19,7 +20,9 @@ function ProtectedRoute() {
 	if (isLoading) {
 		return (
 			<div className="flex h-dvh items-center justify-center">
-				<Spinner />
+				<div className="w-14">
+					<Spinner />
+				</div>
 			</div>
 		);
 	}
@@ -27,9 +30,9 @@ function ProtectedRoute() {
 	//  4. If there IS a user, render the app
 	if (user) {
 		return (
-			<div className="h-dvh w-dvw">
+			<Layout>
 				<Outlet />
-			</div>
+			</Layout>
 		);
 	}
 }
