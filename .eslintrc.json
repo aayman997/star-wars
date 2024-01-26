@@ -1,0 +1,91 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "react-refresh",
+    "@typescript-eslint/eslint-plugin"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "ignorePatterns": [
+    "dist",
+    ".eslintrc.json"
+  ],
+  "rules": {
+    "react-refresh/only-export-components": [
+      "warn",
+      {
+        "allowConstantExport": true
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 160
+      }
+    ],
+    "no-trailing-spaces": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "no-tabs": 0,
+    "react/jsx-indent": [
+      "error",
+      "tab"
+    ],
+    "@typescript-eslint/indent": [
+      "error",
+      "tab"
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      "tab"
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ImportDeclaration": {
+          "minProperties": 0,
+          "multiline": true
+        }
+      }
+    ],
+    "react/require-default-props": "off",
+    "implicit-arrow-linebreak": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-multi-spaces": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-wrap-multilines": "off",
+    "@typescript-eslint/quotes": [
+      "error",
+      "double"
+    ],
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/consistent-type-imports": "error"
+  }
+}
