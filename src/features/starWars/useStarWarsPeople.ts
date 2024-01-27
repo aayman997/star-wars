@@ -16,6 +16,8 @@ const useStarWarsPeople = () => {
 	const { isLoading, data, error } = useQuery({
 		queryKey: ["starWarsPeople", search, filter, page],
 		queryFn: () => getStarWarsPeople({ search, filter, page }),
+		staleTime: Infinity,
+		refetchInterval: false,
 	});
 
 	// PRE-FETCHING
