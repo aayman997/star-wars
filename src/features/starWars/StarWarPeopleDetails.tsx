@@ -18,9 +18,9 @@ export default function StarWarPeopleDetails({ peopleId, name }: Readonly<{ peop
 
 	return (
 		<div>
-			<p className="flex items-center justify-start gap-x-1">
+			<p className="flex flex-col items-center justify-start gap-1 sm:flex-row">
 				<span className="font-heading text-brand-500">Star War</span>
-				<span>character:</span>
+				<span>character</span>
 				<span className="font-bold">{name}</span>
 			</p>
 			<div className="w-full py-8 text-center">
@@ -54,29 +54,29 @@ export default function StarWarPeopleDetails({ peopleId, name }: Readonly<{ peop
 							className="relative -z-[1] col-span-2 text-center text-brand-500 before:absolute before:inset-x-0 before:top-1/2 before:h-[2px]
 							before:-translate-y-1/2 before:bg-brand-600"
 						>
-							<span className="relative z-[1] bg-white px-1 text-lg uppercase tracking-widest">Character details</span>
+							<span className="relative z-[1] bg-brand-50 px-1 text-lg uppercase tracking-widest">Character details</span>
 						</h4>
-						<div className="flex flex-col gap-y-0.5">
+						<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 							<span className="text-charcoal">Name</span>
 							<span className="font-medium text-richBlack">{starWarPeople.name}</span>
 						</div>
-						<div className="flex flex-col gap-y-0.5">
+						<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 							<span className="text-charcoal">Height</span>
 							<span className="font-medium text-richBlack">{`${+starWarPeople.height / 100} M`}</span>
 						</div>
-						<div className="flex flex-col gap-y-0.5">
+						<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 							<span className="text-charcoal">Mass</span>
 							<span className="font-medium text-richBlack">{`${starWarPeople.mass} KG`}</span>
 						</div>
-						<div className="flex flex-col gap-y-0.5">
+						<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 							<span className="text-charcoal">Created date</span>
 							<span className="font-medium text-richBlack">{dateFormatter(starWarPeople.created)}</span>
 						</div>
-						<div className="flex flex-col gap-y-0.5">
+						<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 							<span className="text-charcoal">Films number</span>
 							<span className="font-medium text-richBlack">{`${starWarPeople.films.length} film`}</span>
 						</div>
-						<div className="flex flex-col gap-y-0.5">
+						<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 							<span className="text-charcoal">birth year</span>
 							<span className="font-medium text-richBlack">{starWarPeople.birth_year}</span>
 						</div>
@@ -96,21 +96,21 @@ export default function StarWarPeopleDetails({ peopleId, name }: Readonly<{ peop
 									className="relative -z-[1] col-span-2 text-center text-brand-500 before:absolute before:inset-x-0 before:top-1/2
 									before:h-[2px] before:-translate-y-1/2 before:bg-brand-600"
 								>
-									<span className="relative z-[1] bg-white px-1 text-lg uppercase tracking-widest">Homeworld details</span>
+									<span className="relative z-[1] bg-brand-50 px-1 text-lg uppercase tracking-widest">Homeworld details</span>
 								</h4>
-								<div className="flex flex-col gap-y-0.5">
+								<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 									<span className="text-charcoal">Name</span>
 									<span className="font-medium text-richBlack">{starWarHomeworld.name}</span>
 								</div>
-								<div className="flex flex-col gap-y-0.5">
+								<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 									<span className="text-charcoal">Terrain</span>
 									<span className="font-medium text-richBlack">{starWarHomeworld.terrain}</span>
 								</div>
-								<div className="flex flex-col gap-y-0.5">
+								<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 									<span className="text-charcoal">Climate</span>
 									<span className="font-medium text-richBlack">{starWarHomeworld.climate}</span>
 								</div>
-								<div className="flex flex-col gap-y-0.5">
+								<div className="col-span-2 flex flex-row gap-x-1 sm:col-span-1 sm:flex-col sm:gap-y-0.5">
 									<span className="text-charcoal">Residents number</span>
 									<span className="font-medium text-richBlack">{starWarHomeworld.residents.length}</span>
 								</div>

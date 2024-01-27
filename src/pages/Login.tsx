@@ -20,8 +20,8 @@ export default function Login() {
 	}
 
 	return (
-		<div className="mx-auto flex h-dvh w-[560px] items-center justify-center">
-			<div className="flex items-center justify-center gap-x-8 rounded-xl border-2 border-brand-200 bg-brand-800 p-8 shadow-2xl">
+		<div className="mx-auto flex h-dvh items-center justify-center sm:w-[560px]">
+			<div className="flex flex-col items-center justify-center gap-y-8 rounded-xl border-2 border-brand-200 bg-brand-800 p-8 shadow-2xl sm:flex-row sm:gap-x-8 sm:gap-y-0">
 				<div className="flex basis-2/3 flex-col gap-y-4">
 					<h1 className="gap-y-2text-brand-200 text-center text-xl text-brand-200">Welcome to</h1>
 					<img className="mx-auto w-28 rounded-xl border-2 border-white" src="/images/starwars-logo.webp" alt="Starwars logo" />

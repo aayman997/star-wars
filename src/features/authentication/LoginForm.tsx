@@ -23,10 +23,10 @@ export default function LoginForm() {
 	return (
 		<form onSubmit={handleSubmit(loginHandler)} className="flex flex-col gap-y-6 text-brand-200">
 			<div className="flex flex-col gap-y-2">
-				<label className="capitalize" htmlFor="username">
+				<label className="flex flex-col gap-y-2 capitalize" htmlFor="username">
 					username
 					<input
-						className="mt-2 h-10 rounded-md px-4 text-richBlack"
+						className="h-10 rounded-md px-4 text-richBlack"
 						type="text"
 						id="username"
 						disabled={isLoading}
@@ -52,7 +52,7 @@ export default function LoginForm() {
 				</span>
 			</div>
 			<div className="flex flex-col gap-y-2">
-				<label className="capitalize" htmlFor="password">
+				<label className="flex flex-col gap-y-2 capitalize" htmlFor="password">
 					password
 					<input
 						className="mt-2 h-10 rounded-md px-4 text-richBlack"

@@ -67,6 +67,7 @@ export default function Home() {
 						className="absolute right-0 top-0 z-[2] flex aspect-square h-10 items-center justify-center rounded-r-md bg-brand-500
 						text-brand-50 transition-all duration-300 hover:bg-brand-700"
 						type="submit"
+						aria-label="Search"
 					>
 						<HiSearch size={24} />
 					</button>
@@ -77,10 +78,9 @@ export default function Home() {
 					)}
 				</form>
 			</div>
-			<div className="mt-8 flex flex-col gap-y-6 px-4 py-2">
+			<div className="mt-8 flex w-full flex-col gap-y-6 px-4 py-2">
 				<div className="flex items-center justify-between">
 					<h3 className="text-xl">star wars results</h3>
-					<div className="bg-brand-500">filter and sorting</div>
 				</div>
 				<StarWarsPeopleList />
 				{data?.next || data?.previous ? (

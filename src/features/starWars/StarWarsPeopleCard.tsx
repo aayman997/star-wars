@@ -61,7 +61,6 @@ export default function StarWarsPeopleCard({ name, image, specieName, url }: Rea
 				>
 					<img className="h-3/4 w-full object-cover" src={image} alt={name} />
 					<h3 className="p-2 font-sans text-lg font-bold text-white">{name}</h3>
-					<dialog id="myDialog">This is a dialog window</dialog>
 				</div>
 			</Dialog.Open>
 			<Dialog.Window name={`people_${id}`}>
