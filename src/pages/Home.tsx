@@ -1,5 +1,5 @@
 import StarWarsPeopleList from "@features/starWars/StarWarsPeopleList";
-import { useStarWarsPeople } from "@features/starWars/useStarWarsPeople";
+import useStarWarsPeople from "@features/starWars/useStarWarsPeople";
 import { useSearchParams } from "react-router-dom";
 import Spinner from "@components/Spinner";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
@@ -10,11 +10,11 @@ export default function Home() {
 	const { data, isLoading } = useStarWarsPeople();
 
 	const nextPage = () => {
-		searchParams.set("page", data?.next!);
+		searchParams.set("page", data?.next ?? "");
 		setSearchParams(searchParams);
 	};
 	const previousPage = () => {
-		searchParams.set("page", data?.previous!);
+		searchParams.set("page", data?.previous ?? "");
 		setSearchParams(searchParams);
 	};
 

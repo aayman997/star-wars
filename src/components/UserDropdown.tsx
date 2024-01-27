@@ -1,28 +1,29 @@
 import { HiChevronDown } from "react-icons/hi2";
 import { clsx } from "clsx";
-import { useLogout } from "@features/authentication/useLogout";
-import { useUser } from "@features/authentication/useUser";
-import { useEffect, useState, useRef } from "react";
+import useLogout from "@features/authentication/useLogout";
+import useUser from "@features/authentication/useUser";
+import { useEffect, useState } from "react";
+import useOutsideClick from "@src/hooks/useOutsideClick";
 
 export default function UserDropdown() {
 	const [isOpen, setIsOpen] = useState(false);
-	const dropDown = useRef<HTMLDivElement>(null);
 	const { logout, isLoading } = useLogout();
 	const { user } = useUser();
+	const ref = useOutsideClick<HTMLDivElement>();
 
 	useEffect(() => {
 		function handleClickOutside(event: MouseEvent) {
-			if (isOpen && !dropDown?.current?.contains(event.target as Node)) {
+			if (isOpen && !ref?.current?.contains(event.target as Node)) {
 				setIsOpen(false);
 			}
 		}
 
 		document.addEventListener("click", handleClickOutside);
 		return () => document.removeEventListener("click", handleClickOutside);
-	}, [isOpen]);
+	}, [isOpen, ref]);
 
 	return (
-		<div ref={dropDown} className="relative">
+		<div ref={ref} className="relative">
 			<button type="button" className="flex items-center" onClick={() => setIsOpen(!isOpen)}>
 				<div className="text-white">
 					<img className=" h-12 w-12 max-w-12 rounded-md object-cover" src={user!.image} alt={user!.name} />

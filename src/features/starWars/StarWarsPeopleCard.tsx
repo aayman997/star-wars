@@ -1,5 +1,8 @@
 import type { SpeciesColorKeys } from "@appTypes/SpeciesColor.interface";
 import { clsx } from "clsx";
+import Dialog from "@components/Dialog";
+import StarWarPeopleDetails from "@features/starWars/StarWarPeopleDetails";
+import getIdFromUrl from "@utils/getIdFromUrl";
 
 interface SpeciesColorMapType {
 	background: string;
@@ -40,18 +43,29 @@ const speciesColorMap: Record<SpeciesColorKeys, SpeciesColorMapType> = {
 	"kel dor": { background: "bg-purple-300", color: "text-black" },
 };
 
-export default function StarWarsPeopleCard({ name, image, specieName }: Readonly<{ name: string; image: string; specieName: string }>) {
+export default function StarWarsPeopleCard({ name, image, specieName, url }: Readonly<{ name: string; image: string; specieName: string; url: string }>) {
 	const cardColor = speciesColorMap[specieName as SpeciesColorKeys] || { background: "bg-indigo-500", text: "text-white" };
+
+	const id = getIdFromUrl(url, "people");
+
 	return (
-		<div
-			className={clsx(
-				"aspect-square overflow-hidden rounded-lg bg-gray-800 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl",
-				cardColor.color,
-				cardColor.background,
-			)}
-		>
-			<img className="h-3/4 w-full object-cover" src={image} alt={name} />
-			<h3 className="p-2 font-sans text-lg font-bold text-white">{name}</h3>
-		</div>
+		<Dialog>
+			<Dialog.Open opens={`people_${id}`}>
+				<div
+					className={clsx(
+						"aspect-square overflow-hidden rounded-lg bg-gray-800 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl",
+						cardColor.color,
+						cardColor.background,
+					)}
+				>
+					<img className="h-3/4 w-full object-cover" src={image} alt={name} />
+					<h3 className="p-2 font-sans text-lg font-bold text-white">{name}</h3>
+					<dialog id="myDialog">This is a dialog window</dialog>
+				</div>
+			</Dialog.Open>
+			<Dialog.Window name={`people_${id}`}>
+				<StarWarPeopleDetails peopleId={id} name={name} />
+			</Dialog.Window>
+		</Dialog>
 	);
 }

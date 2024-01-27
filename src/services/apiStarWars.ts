@@ -82,4 +82,27 @@ const getStarWarsPeople = async ({ search, filter, page }: GetStarWarPeople): Pr
 	};
 };
 
-export { getStarWarsPeople };
+const getStarWarPeople = async ({ peopleId }: { peopleId: string | null }) => {
+	if (!peopleId) {
+		return "User Id can't be found";
+	}
+	const res = await fetch(`${import.meta.env.VITE_SWAPI_API_URL}/people/${peopleId}`);
+	if (!res.ok) {
+		throw new Error("Unable to fetch Star War People data");
+	}
+
+	return res.json();
+};
+const getStarHomeworld = async ({ homeworldId }: { homeworldId: string | null }) => {
+	if (!homeworldId) {
+		return "Homeworld Id can't be found";
+	}
+	const res = await fetch(`${import.meta.env.VITE_SWAPI_API_URL}/planets/${homeworldId}`);
+	if (!res.ok) {
+		throw new Error("Unable to fetch Star War People data");
+	}
+
+	return res.json();
+};
+
+export { getStarWarsPeople, getStarWarPeople, getStarHomeworld };

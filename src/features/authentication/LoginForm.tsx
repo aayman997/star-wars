@@ -25,19 +25,19 @@ export default function LoginForm() {
 			<div className="flex flex-col gap-y-2">
 				<label className="capitalize" htmlFor="username">
 					username
+					<input
+						className="mt-2 h-10 rounded-md px-4 text-richBlack"
+						type="text"
+						id="username"
+						disabled={isLoading}
+						{...register("username", {
+							required: {
+								value: true,
+								message: "please enter your username",
+							},
+						})}
+					/>
 				</label>
-				<input
-					className="h-10 rounded-md px-4 text-richBlack"
-					type="text"
-					id="username"
-					disabled={isLoading}
-					{...register("username", {
-						required: {
-							value: true,
-							message: "please enter your username",
-						},
-					})}
-				/>
 				<span
 					style={{
 						animationIterationCount: 3,
@@ -54,19 +54,19 @@ export default function LoginForm() {
 			<div className="flex flex-col gap-y-2">
 				<label className="capitalize" htmlFor="password">
 					password
+					<input
+						className="mt-2 h-10 rounded-md px-4 text-richBlack"
+						type="password"
+						id="password"
+						disabled={isLoading}
+						{...register("password", {
+							required: {
+								value: true,
+								message: "please enter your password",
+							},
+						})}
+					/>
 				</label>
-				<input
-					className="h-10 rounded-md px-4 text-richBlack"
-					type="password"
-					id="password"
-					disabled={isLoading}
-					{...register("password", {
-						required: {
-							value: true,
-							message: "please enter your password",
-						},
-					})}
-				/>
 				<span
 					style={{
 						animationIterationCount: 3,

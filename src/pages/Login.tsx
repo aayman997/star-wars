@@ -1,6 +1,6 @@
 import Logo from "@components/Logo";
 import { useEffect } from "react";
-import { useUser } from "@features/authentication/useUser";
+import useUser from "@features/authentication/useUser";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "@features/authentication/LoginForm";
 import SpinnerFullPage from "@components/SpinnerFullPage";

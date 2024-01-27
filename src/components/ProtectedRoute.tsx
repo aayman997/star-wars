@@ -1,7 +1,7 @@
 import { useNavigate, Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import Spinner from "@components/Spinner";
-import { useUser } from "@features/authentication/useUser";
+import useUser from "@features/authentication/useUser";
 import Layout from "@components/layout/Layout";
 
 function ProtectedRoute() {

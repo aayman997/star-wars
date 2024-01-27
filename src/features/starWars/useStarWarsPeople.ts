@@ -2,7 +2,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
 import { getStarWarsPeople } from "@services/apiStarWars";
 
-export const useStarWarsPeople = () => {
+const useStarWarsPeople = () => {
 	const queryClient = useQueryClient();
 	const [searchParams] = useSearchParams();
 	const search = searchParams.get("search") ?? undefined;
@@ -35,3 +35,4 @@ export const useStarWarsPeople = () => {
 
 	return { isLoading, error, data };
 };
+export default useStarWarsPeople;

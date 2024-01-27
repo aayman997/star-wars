@@ -14,7 +14,6 @@ const useLogin = () => {
 		},
 
 		onError: (error: Error) => {
-			console.log("ERROR", error);
 			toast.error(error.message);
 		},
 	});

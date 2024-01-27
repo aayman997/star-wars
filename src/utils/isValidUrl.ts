@@ -1,7 +1,6 @@
 const isValidUrl = (str: string): boolean => {
 	try {
-		new URL(str);
-		return true;
+		return Boolean(new URL(str).protocol);
 	} catch (_) {
 		return false;
 	}
