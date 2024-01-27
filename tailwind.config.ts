@@ -2,10 +2,7 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
-	content: [
-		"./index.html",
-		"./src/**/*.{js,ts,jsx,tsx}",
-	],
+	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
 			fontFamily: {
@@ -13,6 +10,7 @@ const config: Config = {
 				heading: ["STJEDISE", ...defaultTheme.fontFamily.serif],
 			},
 			container: {
+				center: true,
 				padding: {
 					DEFAULT: "16px",
 				},
