@@ -53,7 +53,8 @@ export default function StarWarsPeopleCard({ name, image, specieName, url }: Rea
 			<Dialog.Open opens={`people_${id}`}>
 				<div
 					className={clsx(
-						"aspect-square overflow-hidden rounded-lg bg-gray-800 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl",
+						`aspect-square cursor-pointer overflow-hidden rounded-lg bg-gray-800 shadow-md transition-all duration-300 hover:-translate-y-1
+						hover:shadow-2xl`,
 						cardColor.color,
 						cardColor.background,
 					)}

@@ -24,7 +24,7 @@ function App() {
 			<ReactQueryDevtools initialIsOpen={false} />
 			<Suspense
 				fallback={
-					<div className="fixed inset-0 flex items-center justify-center bg-brand-900/70">
+					<div className="fixed inset-0 z-[999999] flex items-center justify-center bg-brand-900/70">
 						<Spinner />
 					</div>
 				}
